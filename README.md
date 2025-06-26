@@ -93,19 +93,19 @@ For the intended experience, please use the following settings.
 - Disable sidebar and move all required extensions to the top bar
 - Install ExtraMetadataLoader, ThemeExtras and SuccessStory
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_01.png)
+![Screenshot](https://raw.githubusercontent.com/kushagr-m/Helium/master/screenshots/settings_01.png)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_02.png)
+![Screenshot](https://raw.githubusercontent.com/kushagr-m/Helium/master/screenshots/settings_02.png)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_03.png)
+![Screenshot](https://raw.githubusercontent.com/kushagr-m/Helium/master/screenshots/settings_03.png)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_04.png)
+![Screenshot](https://raw.githubusercontent.com/kushagr-m/Helium/master/screenshots/settings_04.png)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_05.png)
+![Screenshot](https://raw.githubusercontent.com/kushagr-m/Helium/master/screenshots/settings_05.png)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_06.png)
+![Screenshot](https://raw.githubusercontent.com/kushagr-m/Helium/master/screenshots/settings_06.png)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_07.png)
+![Screenshot](https://raw.githubusercontent.com/kushagr-m/Helium/master/screenshots/settings_07.png)
 </details>
 
 The theme provides extensive customization options that go beyond what is normally available in Playnite.
@@ -116,8 +116,8 @@ The theme provides extensive customization options that go beyond what is normal
 ## Screenshots
 
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_01.png)
+![Screenshot](https://raw.githubusercontent.com/kushagr-m/Helium/master/screenshots/screenshot_01.png)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_02.png)
+![Screenshot](https://raw.githubusercontent.com/kushagr-m/Helium/master/screenshots/screenshot_02.png)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_03.png)
+![Screenshot](https://raw.githubusercontent.com/kushagr-m/Helium/master/screenshots/screenshot_03.png)
