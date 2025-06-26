@@ -84,7 +84,29 @@ The theme provides extensive support for a wide range of available Playnite exte
 
 ...and more...
 
-## Configuring the theme
+## Theme setup
+
+For the intended experience, please use the following settings.
+<details>
+<summary>Click to view the appearance settings used in these screenshots</summary>
+
+- Disable sidebar and move all required extensions to the top bar
+- Install ExtraMetadataLoader, ThemeExtras and SuccessStory
+
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_01.png)
+
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_02.png)
+
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_03.png)
+
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_04.png)
+
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_05.png)
+
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_06.png)
+
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_07.png)
+</details>
 
 The theme provides extensive customization options that go beyond what is normally available in Playnite.
 
@@ -93,25 +115,9 @@ The theme provides extensive customization options that go beyond what is normal
 
 ## Screenshots
 
-<details>
-<summary>Click to view the appearance settings used in these screenshots</summary>
 
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_01.png)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_01.jpg)
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_02.png)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_02.jpg)
-
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_03.jpg)
-
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_04.jpg)
-
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_05.jpg)
-
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/settings_06.jpg)
-</details>
-
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_01.webp)
-
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_02.webp)
-
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_03.webp)
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_03.png)
