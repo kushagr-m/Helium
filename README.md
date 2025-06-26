@@ -1,43 +1,51 @@
 ![DownloadCount](https://img.shields.io/github/downloads/darklinkpower/Helium/total.svg)
-# Helium
-Theme inspired by Steam for [Playnite](https://github.com/JosefNemec/Playnite) Desktop Mode.
+# Helium (kkcd ford)
+Theme inspired by Steam for [Playnite](https://github.com/JosefNemec/Playnite) Desktop Mode. Originally created by Brandon Balderas (darklinkpower), forked by me to be able to make some opinionated changes that don't make sense in the upstream branch.
+
+The goal of my fork is to more closely align the visual styling of the theme with the official Steam client as well as make changes that better suit my use case.
 
 ## Tips and donations
-All the work I do for Playnite extensions is and will always be free!
+I do not accept tips. If you would like to support the development of Playnite themes, please contribute to the original creator, darklinkpower.
 
-I make extensions and themes to learn, have fun and to give to the community so donations are not required or requested. If you find the work being done useful and you are and in a position that allows it, you can consider making a tip to support the different Playnite related projects I work on, every little bit helps.
-
-<a href='https://ko-fi.com/darklinkpower' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+> All the work I do for Playnite extensions is and will always be free!
+> 
+> I make extensions and themes to learn, have fun and to give to the community so donations are not required or requested. If you find the work being done useful and you are and in a position that allows it, you can consider making a tip to support the > different Playnite related projects I work on, every little bit helps.
+> 
+> <a href='https://ko-fi.com/darklinkpower' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ## Support
 
-If you encounter a bug or need help with an issue related to the project, please open a new issue in the [Issues Tracker](https://github.com/darklinkpower/Stardust/issues).
+If you encounter a bug or need help with an issue related to the project *specifically related to changes made in this fork*, please open a new issue in the [Issues Tracker](https://github.com/kushagr-m/Helium/issues).
 
 Before submitting:
 - **Search for existing issues** to avoid duplicates and speed up resolution.
+- **Check whether your issue exists in [darklinkpower's version](https://github.com/darklinkpower/Helium)**. If it does, please raise an issue over there.
 - Consider whether the feature could already be achieved through Playnite's built-in settings or the [ThemeModifier plugin](https://playnite.link/addons.html#playnite-thememodifier-plugin).
 - When reporting bugs, provide detailed information (Playnite version, theme version, logs, screenshots, etc.) to help with troubleshooting.
 
 ## Feature Requests
 
-If you have a new idea or feature suggestion, feel free to submit it via the [Issues Tracker](https://github.com/darklinkpower/Helium/issues).
+If you have a new idea or feature suggestion, feel free to submit it via the [Issues Tracker](https://github.com/kushagr-m/Helium/issues).
 
 Before submitting:
 - **Search for existing requests** to ensure your suggestion hasn't already been made.
+- Consider whether your feature is general or related to changes in my fork. If it is unrelated to this fork, please check [darklinkpower's version](https://github.com/darklinkpower/Helium).
 - Consider whether the feature could already be achieved through Playnite's built-in settings or the [ThemeModifier plugin](https://playnite.link/addons.html#playnite-thememodifier-plugin).
 - Clearly explain the feature, its benefits, and how it could improve the theme for most users.
 
 #### A Note on Feature Requests
 
-I truly appreciate everyone who enjoys using my themes and shares feedback. Due to time constraints and the significant effort I already invest in these projects in my free time, I focus on changes that benefit the majority of users.
+From darklinkpower:
 
-Personalized adjustments, while appealing, require considerable time and effort to implement and maintain and can increase complexity. This increases the ongoing work with each update, making it harder for me to manage the project in the long run. Because of this, I prioritize features with broad utility.
-
-For niche or highly specific requests (e.g., moving/removing elements or making tailored changes), I encourage you to try making these modifications yourself. While I understand not everyone may have the knowledge or experience, I want to highlight that I'm not a programmer but I've self-taught everything I know to work on my projects. Unfortunately, due to time constraints, I'm unable to dedicate the time needed to teach these modifications, but with some effort, it's definitely possible to learn and implement them on your own.
-
-I'm sorry if your request is denied for this reason, and I hope you can understand.
-
-Thank you for your support.
+> I truly appreciate everyone who enjoys using my themes and shares feedback. Due to time constraints and the significant effort I already invest in these projects in my free time, I focus on changes that benefit the majority of users.
+> 
+> Personalized adjustments, while appealing, require considerable time and effort to implement and maintain and can increase complexity. This increases the ongoing work with each update, making it harder for me to manage the project in the long run. > Because of this, I prioritize features with broad utility.
+> 
+> For niche or highly specific requests (e.g., moving/removing elements or making tailored changes), I encourage you to try making these modifications yourself. While I understand not everyone may have the knowledge or experience, I want to highlight that > I'm not a programmer but I've self-taught everything I know to work on my projects. Unfortunately, due to time constraints, I'm unable to dedicate the time needed to teach these modifications, but with some effort, it's definitely possible to learn and > implement them on your own.
+> 
+> I'm sorry if your request is denied for this reason, and I hope you can understand.
+> 
+> Thank you for your support.
 
 ## Theme goals
 - Use the Steam client as inspiration to create a polished Playnite UI.
@@ -49,11 +57,11 @@ Thank you for your support.
 - Achieve features that are not available by default on Playnite via community extensions
 
 ## Installation
-Option A: Click the `Download` button in the [addon database entry here](https://playnite.link/addons.html#8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1) to start the install process.
+Option A [not currently set up for my fork]: Click the `Download` button in the [addon database entry here](https://playnite.link/addons.html#8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1) to start the install process.
 
-Option B: Download the latest packaged `pthm` theme file from the [Releases page](https://github.com/darklinkpower/Helium/releases/latest) and open it.
+Option B: Download the latest packaged `pthm` theme file from the [Releases page](https://github.com/kushagr-m/Helium/releases/latest) and open it.
 
-Option C: Download from the Addons browser in Playnite.
+Option C [not currently set up for my fork]: Download from the Addons browser in Playnite.
 
 
 ## Extensions support
