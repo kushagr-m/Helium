@@ -846,7 +846,7 @@
                                                                 <BlurEffect Radius="10"/>
                                                             </Border.Effect>
                                                         </Border>
-                                                        <Border Padding="2">5
+                                                        <Border Padding="2">
                                                             <ContentControl x:Name="PlayerActivities_PluginActivities" MaxHeight="225">
                                                                 <ContentControl.Resources>
                                                                     <Style TargetType="ListBox">
