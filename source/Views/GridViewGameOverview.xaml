@@ -1185,11 +1185,10 @@
                                                                         <ColumnDefinition Width="Auto" />
                                                                     </Grid.ColumnDefinitions>
                                                                     <Grid Grid.Column="0" Margin="-1,0,5,5">
-                                                                            <Border Name="HLTB_mask"
-                                                                                    Background="#1e1e1e"
-                                                                                    CornerRadius="{DynamicResource ControlCornerRadius}"
-                                                                                
-                                                                                Width="Auto"/>
+                                                                        <Border Name="HLTB_mask"
+                                                                                Background="#1e1e1e"
+                                                                                CornerRadius="{DynamicResource ControlCornerRadius}"
+                                                                            HorizontalAlignment="Stretch" />
                                                                         <Grid>
                                                                                 <!-- Use a VisualBrush of 'mask' as the opacity mask -->
                                                                             <Grid.OpacityMask>

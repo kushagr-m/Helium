@@ -1188,8 +1188,7 @@
                                                                         <Border Name="HLTB_mask"
                                                                                 Background="#1e1e1e"
                                                                                 CornerRadius="{DynamicResource ControlCornerRadius}"
-                                                                                
-                                                                                Width="Auto"/>
+                                                                                HorizontalAlignment="Stretch" />
                                                                         <Grid>
                                                                             <!-- Use a VisualBrush of 'mask' as the opacity mask -->
                                                                             <Grid.OpacityMask>
