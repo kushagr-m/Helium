@@ -1184,23 +1184,20 @@
                                                                         <ColumnDefinition Width="*" />
                                                                         <ColumnDefinition Width="Auto" />
                                                                     </Grid.ColumnDefinitions>
-                                                                    <StackPanel Grid.Column="0" Margin="-1,0,5,5">
-                                                                        <Grid>
+                                                                    <Grid Grid.Column="0" Margin="-1,0,5,5">
                                                                             <Border Name="HLTB_mask"
                                                                                     Background="#1e1e1e"
                                                                                     CornerRadius="{DynamicResource ControlCornerRadius}"
-                                                                                    Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}" />
-                                                                                    <!-- CornerRadius="5" /> -->
-                                                                            <StackPanel>
+                                                                                
+                                                                                Width="Auto"/>
+                                                                        <Grid>
                                                                                 <!-- Use a VisualBrush of 'mask' as the opacity mask -->
-                                                                                <StackPanel.OpacityMask>
+                                                                            <Grid.OpacityMask>
                                                                                     <VisualBrush Visual="{Binding ElementName=HLTB_mask}"/>
-                                                                                </StackPanel.OpacityMask>
-                                                                                <ContentControl x:Name="HowLongToBeat_PluginProgressBar" HorizontalAlignment="Stretch" Height="25" 
-                                                                                            Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}"/>
-                                                                            </StackPanel>
+                                                                            </Grid.OpacityMask>
+                                                                            <ContentControl x:Name="HowLongToBeat_PluginProgressBar" HorizontalAlignment="Stretch" Height="25" />
                                                                         </Grid>
-                                                                    </StackPanel>
+                                                                    </Grid>
                                                                     <StackPanel Grid.Column="1" Margin="5,0,0,5">
                                                                         <ContentControl x:Name="HowLongToBeat_PluginButton" HorizontalAlignment="Right" Height="25" 
                                                                                         Visibility="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />   
