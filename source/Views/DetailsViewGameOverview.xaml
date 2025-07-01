@@ -547,8 +547,8 @@
                                                                 <Setter Property="VerticalAlignment" Value="Top" />
                                                             </Style>
                                                         </DockPanel.Resources>
-                                                        <Border DockPanel.Dock="Left" Name="ContainerHeightBorder"
-                                                                Height="{Settings GameDetailsCoverHeight}" MinHeight="150"/>
+                                                        <!-- <Border DockPanel.Dock="Left" Name="ContainerHeightBorder"
+                                                                Height="{Settings GameDetailsCoverHeight}" MinHeight="150"/> -->
 
                                                         <Grid DockPanel.Dock="Left" Margin="0,0,15,0">
                                                             <Grid.Style>
@@ -567,26 +567,29 @@
                                                                     </Style.Triggers>
                                                                 </Style>
                                                             </Grid.Style>
-                                                            <Border BorderThickness="8" BorderBrush="Black">
-                                                                <Border.CacheMode>
-                                                                    <BitmapCache EnableClearType="False"
-                                                                                 SnapsToDevicePixels="False" />
-                                                                </Border.CacheMode>
-                                                                <Border.Effect>
-                                                                    <DropShadowEffect RenderingBias="Performance"
-                                                                                      BlurRadius="15" ShadowDepth="0"/>
-                                                                </Border.Effect>
-                                                            </Border>
-                                                            <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
-                                                                   Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}"
-                                                                   StretchDirection="Both" Stretch="Uniform"
-                                                                   RenderOptions.BitmapScalingMode="Fant" />
+                                                            <Grid>
+                                                                <Border BorderThickness="8" BorderBrush="Black" 
+                                                                    Height="{Settings GameDetailsCoverHeight}" VerticalAlignment="Top">
+                                                                    <Border.CacheMode>
+                                                                        <BitmapCache EnableClearType="False"
+                                                                                    SnapsToDevicePixels="False" />
+                                                                    </Border.CacheMode>
+                                                                    <Border.Effect>
+                                                                        <DropShadowEffect RenderingBias="Performance"
+                                                                                        BlurRadius="15" ShadowDepth="0"/>
+                                                                    </Border.Effect>
+                                                                </Border>
+                                                                <Image Name="PART_ImageCover" VerticalAlignment="Top"
+                                                                    Height="{Settings GameDetailsCoverHeight}"
+                                                                    StretchDirection="Both" Stretch="Uniform"
+                                                                    RenderOptions.BitmapScalingMode="Fant" />
+                                                            </Grid>
                                                         </Grid>
                                                         
                                                         <ContentControl x:Name="BackgroundChanger_PluginCoverImage"
                                                                         Margin="0,0,15,0"
-                                                                        DockPanel.Dock="Left" VerticalAlignment="Bottom"
-                                                                        Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}">
+                                                                        DockPanel.Dock="Left" VerticalAlignment="Top"
+                                                                        Height="{Settings GameDetailsCoverHeight}">
                                                             <ContentControl.Style>
                                                                 <Style TargetType="ContentControl">
                                                                     <Setter Property="Visibility" Value="Collapsed" />
@@ -606,160 +609,148 @@
                                                             </ContentControl.Effect>
                                                         </ContentControl>
 
-                                                        <ScrollViewer Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}" VerticalScrollBarVisibility="Disabled"
-                                                                  HorizontalScrollBarVisibility="Auto">
-                                                            <DockPanel>
-                                                                <DockPanel.Resources>
-                                                                    <Style TargetType="ItemsControl">
-                                                                        <Setter Property="HorizontalAlignment" Value="Left" />
-                                                                    </Style>
-                                                                    <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}">
-                                                                        <Setter Property="Background" Value="Transparent" />
-                                                                        <Setter Property="VerticalAlignment" Value="Center" />
-                                                                    </Style>
-                                                                </DockPanel.Resources>
-                                                                <ScrollViewer Name="PART_ElemDescription" Tag="{DynamicResource DetailsViewDescriptionDockToRight}"
-                                                                              Width="{DynamicResource DetailsViewDescriptionWidth}" Margin="5,5,15,0">
-                                                                    <ScrollViewer.Style>
-                                                                        <Style TargetType="ScrollViewer">
-                                                                            <Setter Property="DockPanel.Dock" Value="Left" />
-                                                                            <Style.Triggers>
-                                                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
-                                                                                    <Setter Property="DockPanel.Dock" Value="Right" />
-                                                                                </DataTrigger>
-                                                                            </Style.Triggers>
-                                                                        </Style>
-                                                                    </ScrollViewer.Style>
-                                                                    <StackPanel>
-                                                                        <!-- Display game name in description panel -->
-                                                                        <TextBlock 
-                                                                            Margin="0,0,0,5"
-                                                                            Text="{Binding Game.DisplayName}"
-                                                                            TextWrapping="Wrap"
-                                                                            FontFamily="{DynamicResource FontFamily}"
-                                                                            Foreground="{DynamicResource TextBrush}"
-                                                                            Tag="{DynamicResource DetailsViewShowTitleInDescription}">
-                                                                            <TextBlock.Style>
-                                                                                <Style TargetType="TextBlock">
-                                                                                    <Setter Property="Visibility" Value="Collapsed" />
-                                                                                    <Style.Triggers>
-                                                                                        <MultiDataTrigger>
-                                                                                            <MultiDataTrigger.Conditions>
-                                                                                                <Condition Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=False}" Value="True" />
-                                                                                                <Condition Binding="{Binding ElementName=ExtraMetadataLoader_LogoLoaderControl, Path=Visibility, FallbackValue=Collapsed}" Value="Visible" />
-                                                                                                <Condition Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsLogoAvailable, FallbackValue=False}" Value="True" />
-                                                                                            </MultiDataTrigger.Conditions>
-                                                                                            <Setter Property="Visibility" Value="Visible" />
-                                                                                        </MultiDataTrigger>
-                                                                                    </Style.Triggers>
-                                                                                </Style>
-                                                                            </TextBlock.Style>
-                                                                        </TextBlock>
-                                                                        <!-- <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Margin="0,0,0,5"
-                                                                               Style="{DynamicResource BaseTextBlockStyle}" Visibility="Collapsed"/>
-                                                                        <Separator Background="{DynamicResource PanelSeparatorBrush}" Visibility="Collapsed"/> -->
-                                                                        <HtmlTextView Name="PART_HtmlDescription"
-                                                                                  Margin="0,0,0,5"
-                                                                                  HtmlFontSize="{DynamicResource FontSize}"
-                                                                                  HtmlFontFamily="{DynamicResource FontFamily}"
-                                                                                  HtmlForeground="{DynamicResource DetailsViewContainerLabelColor}"
-                                                                                  LinkForeground="{DynamicResource GlyphColor}"                                      
-                                                                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                                                                                  ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
-                                                                    </StackPanel>
-                                                                </ScrollViewer>
+                                                        <DockPanel DockPanel.Dock="Left" VerticalAlignment="Top"
+                                                            Height="{Settings GameDetailsCoverHeight}" 
+                                                            ClipToBounds="True">
+                                                            <!-- MaxHeight="{Binding ElementName=DetailsPanel, Path=ActualHeight, FallbackValue={Settings GameDetailsCoverHeight}}" -->
+                                                            <!-- Height="{Binding ElementName=DetailsPanel, Path=Height, FallbackValue={Settings GameDetailsCoverHeight}}"
+                                                            MaxHeight="{Binding ElementName=DetailsPanel, Path=ActualHeight, FallbackValue={Settings GameDetailsCoverHeight}}" -->
+                                                            <DockPanel.Resources>
+                                                                <Style TargetType="ItemsControl">
+                                                                    <Setter Property="HorizontalAlignment" Value="Left" />
+                                                                </Style>
+                                                                <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}">
+                                                                    <Setter Property="Background" Value="Transparent" />
+                                                                </Style>
+                                                            </DockPanel.Resources>
+                                                            <ScrollViewer Name="PART_ElemDescription"
+                                                                            Width="{DynamicResource DetailsViewDescriptionWidth}" Margin="5,5,15,0"
+                                                                            VerticalAlignment="Top">
+                                                                <StackPanel>
+                                                                    <!-- Display game name in description panel -->
+                                                                    <TextBlock 
+                                                                        Margin="0,0,0,5"
+                                                                        Text="{Binding Game.DisplayName}"
+                                                                        TextWrapping="Wrap"
+                                                                        FontFamily="{DynamicResource FontFamily}"
+                                                                        Foreground="{DynamicResource TextBrush}"
+                                                                        Tag="{DynamicResource DetailsViewShowTitleInDescription}">
+                                                                        <TextBlock.Style>
+                                                                            <Style TargetType="TextBlock">
+                                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                                                <Style.Triggers>
+                                                                                    <MultiDataTrigger>
+                                                                                        <MultiDataTrigger.Conditions>
+                                                                                            <Condition Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=False}" Value="True" />
+                                                                                            <Condition Binding="{Binding ElementName=ExtraMetadataLoader_LogoLoaderControl, Path=Visibility, FallbackValue=Collapsed}" Value="Visible" />
+                                                                                            <Condition Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsLogoAvailable, FallbackValue=False}" Value="True" />
+                                                                                        </MultiDataTrigger.Conditions>
+                                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                                    </MultiDataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </TextBlock.Style>
+                                                                    </TextBlock>
+                                                                    <HtmlTextView Name="PART_HtmlDescription"
+                                                                                Margin="0,0,0,-15"
+                                                                                HtmlFontSize="{DynamicResource FontSize}"
+                                                                                HtmlFontFamily="{DynamicResource FontFamily}"
+                                                                                HtmlForeground="{DynamicResource DetailsViewContainerLabelColor}"
+                                                                                LinkForeground="{DynamicResource GlyphColor}"                                      
+                                                                                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                                                                ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+                                                                </StackPanel>
+                                                            </ScrollViewer>
 
-                                                                <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
-                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8">
-                                                                        <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
-                                                                        <Button Name="PART_ButtonSource" />
+                                                        </DockPanel>
 
-                                                                        <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsDevelopers" MaxWidth="180" />
-                                                                        <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsPublishers" MaxWidth="180" />
+                                                        <StackPanel DockPanel.Dock="Left" Name="DetailsPanel">
+                                                            <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8" Margin="15,0,0,5">
+                                                                <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
+                                                                <Button Name="PART_ButtonSource" />
 
-                                                                        <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsSeries" MaxWidth="200" />
+                                                                <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
+                                                                <ItemsControl Name="PART_ItemsDevelopers" MaxWidth="180" />
+                                                                <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
+                                                                <ItemsControl Name="PART_ItemsPublishers" MaxWidth="180" />
 
-                                                                        <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
-                                                                        <Button Name="PART_ButtonReleaseDate" />
+                                                                <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
+                                                                <ItemsControl Name="PART_ItemsSeries" MaxWidth="200" />
 
-                                                                        <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsRegions" />
+                                                                <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
+                                                                <Button Name="PART_ButtonReleaseDate" />
 
-                                                                        <Label Name="PART_ElemRecentActivity" Content="{DynamicResource LOCRecentActivityLabel}" />
-                                                                        <TextBlock Name="PART_TextRecentActivity" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
-                                                                        <Label Name="PART_ElemAdded" Content="{DynamicResource LOCDateAddedLabel}" />
-                                                                        <TextBlock Name="PART_TextAdded" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
-                                                                    </GridEx>
-                                                                </ScrollViewer>
-                                                                <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
-                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8">
-                                                                        <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
-                                                                        <Button Name="PART_ButtonLibrary" />
-                                                                        <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
-                                                                        <ItemsControl Name="PART_ItemsPlatforms" />
-                                                                        
-                                                                        <Label Name="PART_ElemInstallDirectory" Content="{DynamicResource LOCGameInstallDirTitle}" />
-                                                                        <Button Name="PART_ButtonInstallDirectory" HorizontalAlignment="Left" MaxWidth="200" />
-                                                                        
-                                                                        <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
-                                                                        <Button Name="PART_ButtonVersion" VerticalAlignment="Center" />
-                                                                        
-                                                                        <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
-                                                                        <StackPanel Orientation="Horizontal"
-                                                                                    Visibility="{Binding ElementName=PART_TextUserScore, Path=Visibility}">
-                                                                            <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
-                                                                                       Style="{DynamicResource TextBlockGameScore}" />
-                                                                            <ContentControl Content="{Binding Game.UserScore}"
-                                                                                            Padding="6,0,0,4"
-                                                                                            HorizontalAlignment="Left"
-                                                                                            VerticalAlignment="Center"
-                                                                                            Background="Transparent"
-                                                                                            Foreground="{Binding ElementName=PART_TextUserScore, Path=Foreground}"
-                                                                                            Height="{Binding ElementName=PART_TextUserScore, Path=ActualHeight}"
-                                                                                            ContentTemplate="{StaticResource FiveStarScoreTemplate}"/>
-                                                                        </StackPanel>
+                                                                <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
+                                                                <ItemsControl Name="PART_ItemsRegions" />
 
-                                                                        <Label Name="PART_ElemCommunityScore" Content="{DynamicResource LOCCommunityScore}" />
-                                                                        <StackPanel Orientation="Horizontal"
-                                                                                    Visibility="{Binding ElementName=PART_TextCommunityScore, Path=Visibility}">
-                                                                            <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center"
-                                                                                       Style="{DynamicResource TextBlockGameScore}" />
-                                                                            <ContentControl Content="{Binding Game.CommunityScore}"
-                                                                                            Padding="6,0,0,4"
-                                                                                            HorizontalAlignment="Left"
-                                                                                            VerticalAlignment="Center"
-                                                                                            Background="Transparent"
-                                                                                            Foreground="{Binding ElementName=PART_TextCommunityScore, Path=Foreground}"
-                                                                                            Height="{Binding ElementName=PART_TextCommunityScore, Path=ActualHeight}"
-                                                                                            ContentTemplate="{StaticResource FiveStarScoreTemplate}"/>
-                                                                        </StackPanel>
+                                                                <Label Name="PART_ElemRecentActivity" Content="{DynamicResource LOCRecentActivityLabel}" />
+                                                                <TextBlock Name="PART_TextRecentActivity" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
+                                                                <Label Name="PART_ElemAdded" Content="{DynamicResource LOCDateAddedLabel}" />
+                                                                <TextBlock Name="PART_TextAdded" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
+                                                            </GridEx>
+                                                            <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8" Margin="15,0,0,5">
+                                                                <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
+                                                                <Button Name="PART_ButtonLibrary" />
+                                                                <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
+                                                                <ItemsControl Name="PART_ItemsPlatforms" />
+                                                                
+                                                                <Label Name="PART_ElemInstallDirectory" Content="{DynamicResource LOCGameInstallDirTitle}" />
+                                                                <Button Name="PART_ButtonInstallDirectory" HorizontalAlignment="Left" MaxWidth="200" />
+                                                                
+                                                                <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
+                                                                <Button Name="PART_ButtonVersion" VerticalAlignment="Center" />
+                                                                
+                                                                <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
+                                                                <StackPanel Orientation="Horizontal"
+                                                                            Visibility="{Binding ElementName=PART_TextUserScore, Path=Visibility}">
+                                                                    <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
+                                                                                Style="{DynamicResource TextBlockGameScore}" />
+                                                                    <ContentControl Content="{Binding Game.UserScore}"
+                                                                                    Padding="6,0,0,4"
+                                                                                    HorizontalAlignment="Left"
+                                                                                    VerticalAlignment="Center"
+                                                                                    Background="Transparent"
+                                                                                    Foreground="{Binding ElementName=PART_TextUserScore, Path=Foreground}"
+                                                                                    Height="{Binding ElementName=PART_TextUserScore, Path=ActualHeight}"
+                                                                                    ContentTemplate="{StaticResource FiveStarScoreTemplate}"/>
+                                                                </StackPanel>
 
-                                                                        <Label Name="PART_ElemCriticScore" Content="{DynamicResource LOCCriticScore}" />
-                                                                        <StackPanel Orientation="Horizontal"
-                                                                                    Visibility="{Binding ElementName=PART_TextCriticScore, Path=Visibility}">
-                                                                            <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center"
-                                                                                       Style="{DynamicResource TextBlockGameScore}" />
-                                                                            <ContentControl Content="{Binding Game.CriticScore}"
-                                                                                            Padding="6,0,0,4"
-                                                                                            HorizontalAlignment="Left"
-                                                                                            VerticalAlignment="Center"
-                                                                                            Background="Transparent"
-                                                                                            Foreground="{Binding ElementName=PART_TextCriticScore, Path=Foreground}"
-                                                                                            Height="{Binding ElementName=PART_TextCriticScore, Path=ActualHeight}"
-                                                                                            ContentTemplate="{StaticResource FiveStarScoreTemplate}"/>
-                                                                        </StackPanel>
+                                                                <Label Name="PART_ElemCommunityScore" Content="{DynamicResource LOCCommunityScore}" />
+                                                                <StackPanel Orientation="Horizontal"
+                                                                            Visibility="{Binding ElementName=PART_TextCommunityScore, Path=Visibility}">
+                                                                    <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center"
+                                                                                Style="{DynamicResource TextBlockGameScore}" />
+                                                                    <ContentControl Content="{Binding Game.CommunityScore}"
+                                                                                    Padding="6,0,0,4"
+                                                                                    HorizontalAlignment="Left"
+                                                                                    VerticalAlignment="Center"
+                                                                                    Background="Transparent"
+                                                                                    Foreground="{Binding ElementName=PART_TextCommunityScore, Path=Foreground}"
+                                                                                    Height="{Binding ElementName=PART_TextCommunityScore, Path=ActualHeight}"
+                                                                                    ContentTemplate="{StaticResource FiveStarScoreTemplate}"/>
+                                                                </StackPanel>
 
-                                                                        <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsAgeRatings" />
-                                                                    </GridEx>
-                                                                </ScrollViewer>
-                                                            </DockPanel>
-                                                        </ScrollViewer>
+                                                                <Label Name="PART_ElemCriticScore" Content="{DynamicResource LOCCriticScore}" />
+                                                                <StackPanel Orientation="Horizontal"
+                                                                            Visibility="{Binding ElementName=PART_TextCriticScore, Path=Visibility}">
+                                                                    <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center"
+                                                                                Style="{DynamicResource TextBlockGameScore}" />
+                                                                    <ContentControl Content="{Binding Game.CriticScore}"
+                                                                                    Padding="6,0,0,4"
+                                                                                    HorizontalAlignment="Left"
+                                                                                    VerticalAlignment="Center"
+                                                                                    Background="Transparent"
+                                                                                    Foreground="{Binding ElementName=PART_TextCriticScore, Path=Foreground}"
+                                                                                    Height="{Binding ElementName=PART_TextCriticScore, Path=ActualHeight}"
+                                                                                    ContentTemplate="{StaticResource FiveStarScoreTemplate}"/>
+                                                                </StackPanel>
 
-                                                    </DockPanel>
+                                                                <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
+                                                                <ItemsControl Name="PART_ItemsAgeRatings" />
+                                                            </GridEx>
+                                                        </StackPanel>
+                                            
+                                                   </DockPanel>
                                                 </Border>
                                                 <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}"
                                                         CornerRadius="0"
