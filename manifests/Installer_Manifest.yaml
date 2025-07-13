@@ -590,3 +590,14 @@ Packages:
     Changelog:
       - 'Top Panel: Added option to configure the width of the search box'
       - 'Note: Added options can be configured using the ThemeModifier extension'
+  - Version: 1.68.3
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2025-07-14
+    PackageUrl: https://github.com/kushagr-m/Helium/releases/download/1.68.3/b46f5ca0-be71-4398-b924-216c7c20efdd_1_68_3.pthm
+    Changelog:
+      - 'Moved SteamScreenshots back to 2nd column'
+      - 'Fixed bug when resizeing window that caused HLTBPanel to behave strangely'
+      - 'DetailsViewGameOverview: Remove Key attributes from DrawingImages by darklinkpower'
+      - 'DetailsViewGameOverview: Change background of elements in HTLB panel by darklinkpower'
+      - 'Hide GameActivity when no controls are activated or no data is available'
+      - 'Hide DLC panel when no controls are made visible (bug: if there is no owned DLC and the EnableIntegrationListDlcOwned control is enabled, an empty panel will appear)'
