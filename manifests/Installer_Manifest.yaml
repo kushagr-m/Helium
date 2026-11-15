@@ -40,7 +40,7 @@ Packages:
   - Version: 1.71.1
     RequiredApiVersion: 2.8.0
     ReleaseDate: 2026-11-16
-    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.71/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_71.pthm
+    PackageUrl: https://github.com/kushagr-m/Helium/releases/download/1.17.1/b46f5ca0-be71-4398-b924-216c7c20efdd_1_71_1.pthm
     Changelog:
       - 'Migrated achievement integration from SuccessStory to Playnite Achievements'
       - 'Updated: PlayerActivities plugin background was set incorrectly. Completely redone to match the Steam "timeline" look'
