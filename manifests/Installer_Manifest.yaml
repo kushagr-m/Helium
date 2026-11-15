@@ -31,7 +31,19 @@ Packages:
     Changelog:
       - 'Moved SteamScreenshots back to 2nd column'
       - 'Fixed bug when resizeing window that caused HLTBPanel to behave strangely'
-      - 'DetailsViewGameOverview: Remove Key attributes from DrawingImages by darklinkpower'
-      - 'DetailsViewGameOverview: Change background of elements in HTLB panel by darklinkpower'
+      - 'DetailsViewGameOverview: Remove Key attributes from DrawingImages (by darklinkpower)'
+      - 'DetailsViewGameOverview: Change background of elements in HTLB panel (by darklinkpower)'
       - 'Hide GameActivity when no controls are activated or no data is available'
       - 'Hide DLC panel when no controls are made visible (bug: if there is no owned DLC and the EnableIntegrationListDlcOwned control is enabled, an empty panel will appear)'
+      - 'Top Panel: Added option to configure the width of the search box'
+      - 'Note: Added options can be configured using the ThemeModifier extension'
+  - Version: 1.71.1
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2026-11-16
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.71/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_71.pthm
+    Changelog:
+      - 'Migrated achievement integration from SuccessStory to Playnite Achievements'
+      - 'Updated: PlayerActivities plugin background was set incorrectly. Completely redone to match the Steam "timeline" look'
+      - 'Fixed: Achievements progress bar in header on Details View being very narrow when Playnite is set to certain languages'
+      - 'Fixed: Ends of descriptions are cut-off in game overview'
+      - 'Add banner image for HoYoPlay library plugin games (by darklinkpower)'
