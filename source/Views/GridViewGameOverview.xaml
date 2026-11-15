@@ -471,7 +471,7 @@
                                                                 Style="{DynamicResource HeaderLabel}"
                                                                 HorizontalAlignment="Left" />
 
-                                                            <Grid Width="{Binding ActualWidth, ElementName=AchievementsHeaderLabel}" HorizontalAlignment="Left">
+                                                            <Grid Width="{Binding ActualWidth, ElementName=AchievementsHeaderLabel}" MinWidth="70" HorizontalAlignment="Left">
                                                                 <Grid.ColumnDefinitions>
                                                                     <ColumnDefinition Width="Auto" />
                                                                     <ColumnDefinition Width="*" />
