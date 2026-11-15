@@ -317,7 +317,7 @@
                                                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
                                                             <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCInstallSizeLabel}"/>
                                                             <TextBlock x:Name="PART_TextInstallSize" Style="{DynamicResource HeaderTextBlock}"/>
-                                                </StackPanel>
+                                                        </StackPanel>
                                                     </DockPanel>
                                                 </DockPanel>
                                                 
@@ -401,7 +401,7 @@
                                                         <Image Height="100" Width="100">
                                                             <Image.Source>
                                                                 <DrawingImage>
-                                                                <DrawingImage.Drawing>
+                                                                    <DrawingImage.Drawing>
                                                                         <DrawingGroup ClipGeometry="M0,0 V36 H36 V0 H0 Z">
                                                                         <GeometryDrawing Geometry="F1 M36,36z M0,0z M10.1777,10.0258L10.3929,9.80693 10.3929,9.49999 10.3929,5.52777 14.2857,5.52777 14.6001,5.52777 14.8205,5.30358 18,2.06976 21.1795,5.30358 21.3999,5.52777 21.7143,5.52777 25.6071,5.52777 25.6071,9.50001 25.6071,9.80696 25.8223,10.0258 28.5553,12.8055 25.8223,15.5853 25.6071,15.8041 25.6071,16.1111 25.6071,20.0833 21.7143,20.0833 21.3999,20.0833 21.1795,20.3075 18,23.5413 14.8205,20.3075 14.6001,20.0833 14.2857,20.0833 10.3929,20.0833 10.3929,16.1111 10.3929,15.8042 10.1777,15.5853 7.44464,12.8055 10.1777,10.0258z M14.7399,28.0317L11.56,33.4221 9.85164,29.9469 9.6456,29.5278 9.17857,29.5278 6.29474,29.5278 8.68445,25.3611 12.1142,25.3611 14.7399,28.0317z M26.8214,29.5278L26.3544,29.5278 26.1484,29.9469 24.44,33.4221 21.2601,28.0317 23.8858,25.3611 27.3155,25.3611 29.7053,29.5278 26.8214,29.5278z">
                                                                             <GeometryDrawing.Brush>
@@ -480,10 +480,10 @@
                                                                 <DockPanel Grid.Column="0" Margin="0,0,8,0">
                                                                     <TextBlock Text="{PluginSettings Plugin=PlayniteAchievements, Path=Unlocked, FallbackValue='-'}"
                                                                             Style="{DynamicResource HeaderTextBlock}" />
-                                                                <TextBlock Text="/" Style="{DynamicResource HeaderTextBlock}" />
+                                                                    <TextBlock Text="/" Style="{DynamicResource HeaderTextBlock}" />
                                                                     <TextBlock Text="{PluginSettings Plugin=PlayniteAchievements, Path=Total, FallbackValue='-'}"
                                                                             Style="{DynamicResource HeaderTextBlock}"/>
-                                                            </DockPanel>
+                                                                </DockPanel>
 
                                                                 <StackPanel Grid.Column="1" x:Name="DockAchievementsBar" VerticalAlignment="Center">
                                                                     <ProgressBar x:Name="progressBar"
@@ -570,19 +570,19 @@
                                                             <Grid>
                                                                 <Border BorderThickness="8" BorderBrush="Black" 
                                                                     Height="{Settings GameDetailsCoverHeight}" VerticalAlignment="Top">
-                                                                <Border.CacheMode>
-                                                                    <BitmapCache EnableClearType="False"
-                                                                                 SnapsToDevicePixels="False" />
-                                                                </Border.CacheMode>
-                                                                <Border.Effect>
-                                                                    <DropShadowEffect RenderingBias="Performance"
-                                                                                      BlurRadius="15" ShadowDepth="0"/>
-                                                                </Border.Effect>
-                                                            </Border>
+                                                                    <Border.CacheMode>
+                                                                        <BitmapCache EnableClearType="False"
+                                                                                    SnapsToDevicePixels="False" />
+                                                                    </Border.CacheMode>
+                                                                    <Border.Effect>
+                                                                        <DropShadowEffect RenderingBias="Performance"
+                                                                                        BlurRadius="15" ShadowDepth="0"/>
+                                                                    </Border.Effect>
+                                                                </Border>
                                                                 <Image Name="PART_ImageCover" VerticalAlignment="Top"
                                                                     Height="{Settings GameDetailsCoverHeight}"
-                                                                   StretchDirection="Both" Stretch="Uniform"
-                                                                   RenderOptions.BitmapScalingMode="Fant" />
+                                                                    StretchDirection="Both" Stretch="Uniform"
+                                                                    RenderOptions.BitmapScalingMode="Fant" />
                                                             </Grid>
                                                         </Grid>
                                                         
@@ -615,142 +615,142 @@
                                                             <!-- MaxHeight="{Binding ElementName=DetailsPanel, Path=ActualHeight, FallbackValue={Settings GameDetailsCoverHeight}}" -->
                                                             <!-- Height="{Binding ElementName=DetailsPanel, Path=Height, FallbackValue={Settings GameDetailsCoverHeight}}"
                                                             MaxHeight="{Binding ElementName=DetailsPanel, Path=ActualHeight, FallbackValue={Settings GameDetailsCoverHeight}}" -->
-                                                                <DockPanel.Resources>
-                                                                    <Style TargetType="ItemsControl">
-                                                                        <Setter Property="HorizontalAlignment" Value="Left" />
-                                                                    </Style>
-                                                                    <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}">
-                                                                        <Setter Property="Background" Value="Transparent" />
-                                                                    </Style>
-                                                                </DockPanel.Resources>
-                                                                <ScrollViewer Name="PART_ElemDescription"
+                                                            <DockPanel.Resources>
+                                                                <Style TargetType="ItemsControl">
+                                                                    <Setter Property="HorizontalAlignment" Value="Left" />
+                                                                </Style>
+                                                                <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}">
+                                                                    <Setter Property="Background" Value="Transparent" />
+                                                                </Style>
+                                                            </DockPanel.Resources>
+                                                            <ScrollViewer Name="PART_ElemDescription"
                                                                             Width="{DynamicResource GridViewDescriptionWidth}" Margin="5,5,15,0"
                                                                             VerticalAlignment="Top">
-                                                                    <StackPanel>
-                                                                        <!-- Display game name in description panel -->
-                                                                        <TextBlock 
-                                                                            Margin="0,0,0,5"
-                                                                            Text="{Binding Game.DisplayName}"
-                                                                            TextWrapping="Wrap"
-                                                                            FontFamily="{DynamicResource FontFamily}"
-                                                                            Foreground="{DynamicResource TextBrush}"
-                                                                            Tag="{DynamicResource GridViewShowTitleInDescription}">
-                                                                            <TextBlock.Style>
-                                                                                <Style TargetType="TextBlock">
-                                                                                    <Setter Property="Visibility" Value="Collapsed" />
-                                                                                    <Style.Triggers>
-                                                                                        <MultiDataTrigger>
-                                                                                            <MultiDataTrigger.Conditions>
-                                                                                                <Condition Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=False}" Value="True" />
-                                                                                                <Condition Binding="{Binding ElementName=ExtraMetadataLoader_LogoLoaderControl, Path=Visibility, FallbackValue=Collapsed}" Value="Visible" />
-                                                                                                <Condition Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsLogoAvailable, FallbackValue=False}" Value="True" />
-                                                                                            </MultiDataTrigger.Conditions>
-                                                                                            <Setter Property="Visibility" Value="Visible" />
-                                                                                        </MultiDataTrigger>
-                                                                                    </Style.Triggers>
-                                                                                </Style>
-                                                                            </TextBlock.Style>
-                                                                        </TextBlock>
-                                                                        <HtmlTextView Name="PART_HtmlDescription"
+                                                                <StackPanel>
+                                                                    <!-- Display game name in description panel -->
+                                                                    <TextBlock 
+                                                                        Margin="0,0,0,5"
+                                                                        Text="{Binding Game.DisplayName}"
+                                                                        TextWrapping="Wrap"
+                                                                        FontFamily="{DynamicResource FontFamily}"
+                                                                        Foreground="{DynamicResource TextBrush}"
+                                                                        Tag="{DynamicResource GridViewShowTitleInDescription}">
+                                                                        <TextBlock.Style>
+                                                                            <Style TargetType="TextBlock">
+                                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                                                <Style.Triggers>
+                                                                                    <MultiDataTrigger>
+                                                                                        <MultiDataTrigger.Conditions>
+                                                                                            <Condition Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=False}" Value="True" />
+                                                                                            <Condition Binding="{Binding ElementName=ExtraMetadataLoader_LogoLoaderControl, Path=Visibility, FallbackValue=Collapsed}" Value="Visible" />
+                                                                                            <Condition Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsLogoAvailable, FallbackValue=False}" Value="True" />
+                                                                                        </MultiDataTrigger.Conditions>
+                                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                                    </MultiDataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </TextBlock.Style>
+                                                                    </TextBlock>
+                                                                    <HtmlTextView Name="PART_HtmlDescription"
                                                                                 Margin="0,0,0,-15"
-                                                                                  HtmlFontSize="{DynamicResource FontSize}"
-                                                                                  HtmlFontFamily="{DynamicResource FontFamily}"
-                                                                                  HtmlForeground="{DynamicResource DetailsViewContainerLabelColor}"
-                                                                                  LinkForeground="{DynamicResource GlyphColor}"                                      
-                                                                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                                                                                  ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
-                                                                    </StackPanel>
-                                                                </ScrollViewer>
+                                                                                HtmlFontSize="{DynamicResource FontSize}"
+                                                                                HtmlFontFamily="{DynamicResource FontFamily}"
+                                                                                HtmlForeground="{DynamicResource DetailsViewContainerLabelColor}"
+                                                                                LinkForeground="{DynamicResource GlyphColor}"                                      
+                                                                                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                                                                ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+                                                                </StackPanel>
+                                                            </ScrollViewer>
 
                                                         </DockPanel>
 
                                                         <StackPanel DockPanel.Dock="Left" Name="DetailsPanel">
                                                             <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8" Margin="15,0,0,5">
-                                                                        <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
-                                                                        <Button Name="PART_ButtonSource" />
+                                                                <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
+                                                                <Button Name="PART_ButtonSource" />
 
-                                                                        <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsDevelopers" MaxWidth="180" />
-                                                                        <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsPublishers" MaxWidth="180" />
-                                                                        
-                                                                        <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsSeries" MaxWidth="200" />
+                                                                <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
+                                                                <ItemsControl Name="PART_ItemsDevelopers" MaxWidth="180" />
+                                                                <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
+                                                                <ItemsControl Name="PART_ItemsPublishers" MaxWidth="180" />
 
-                                                                        <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
-                                                                        <Button Name="PART_ButtonReleaseDate" />
+                                                                <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
+                                                                <ItemsControl Name="PART_ItemsSeries" MaxWidth="200" />
 
-                                                                        <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsRegions" />
+                                                                <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
+                                                                <Button Name="PART_ButtonReleaseDate" />
 
-                                                                        <Label Name="PART_ElemRecentActivity" Content="{DynamicResource LOCRecentActivityLabel}" />
-                                                                        <TextBlock Name="PART_TextRecentActivity" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
-                                                                        <Label Name="PART_ElemAdded" Content="{DynamicResource LOCDateAddedLabel}" />
-                                                                        <TextBlock Name="PART_TextAdded" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
-                                                                    </GridEx>
+                                                                <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
+                                                                <ItemsControl Name="PART_ItemsRegions" />
+
+                                                                <Label Name="PART_ElemRecentActivity" Content="{DynamicResource LOCRecentActivityLabel}" />
+                                                                <TextBlock Name="PART_TextRecentActivity" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
+                                                                <Label Name="PART_ElemAdded" Content="{DynamicResource LOCDateAddedLabel}" />
+                                                                <TextBlock Name="PART_TextAdded" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
+                                                            </GridEx>
                                                             <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8" Margin="15,0,0,5">
-                                                                        <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
-                                                                        <Button Name="PART_ButtonLibrary" />
-                                                                        <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
-                                                                        <ItemsControl Name="PART_ItemsPlatforms" />
-                                                                        
-                                                                        <Label Name="PART_ElemInstallDirectory" Content="{DynamicResource LOCGameInstallDirTitle}" />
-                                                                        <Button Name="PART_ButtonInstallDirectory" HorizontalAlignment="Left" MaxWidth="200" />
+                                                                <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
+                                                                <Button Name="PART_ButtonLibrary" />
+                                                                <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
+                                                                <ItemsControl Name="PART_ItemsPlatforms" />
+                                                                
+                                                                <Label Name="PART_ElemInstallDirectory" Content="{DynamicResource LOCGameInstallDirTitle}" />
+                                                                <Button Name="PART_ButtonInstallDirectory" HorizontalAlignment="Left" MaxWidth="200" />
+                                                                
+                                                                <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
+                                                                <Button Name="PART_ButtonVersion" VerticalAlignment="Center" />
+                                                                
+                                                                <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
+                                                                <StackPanel Orientation="Horizontal"
+                                                                            Visibility="{Binding ElementName=PART_TextUserScore, Path=Visibility}">
+                                                                    <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
+                                                                                Style="{DynamicResource TextBlockGameScore}" />
+                                                                    <ContentControl Content="{Binding Game.UserScore}"
+                                                                                    Padding="6,0,0,4"
+                                                                                    HorizontalAlignment="Left"
+                                                                                    VerticalAlignment="Center"
+                                                                                    Background="Transparent"
+                                                                                    Foreground="{Binding ElementName=PART_TextUserScore, Path=Foreground}"
+                                                                                    Height="{Binding ElementName=PART_TextUserScore, Path=ActualHeight}"
+                                                                                    ContentTemplate="{StaticResource FiveStarScoreTemplate}"/>
+                                                                </StackPanel>
 
-                                                                        <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
-                                                                        <Button Name="PART_ButtonVersion" VerticalAlignment="Center" />
-                                                                        
-                                                                        <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
-                                                                        <StackPanel Orientation="Horizontal"
-                                                                                    Visibility="{Binding ElementName=PART_TextUserScore, Path=Visibility}">
-                                                                            <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
-                                                                                       Style="{DynamicResource TextBlockGameScore}" />
-                                                                            <ContentControl Content="{Binding Game.UserScore}"
-                                                                                            Padding="6,0,0,4"
-                                                                                            HorizontalAlignment="Left"
-                                                                                            VerticalAlignment="Center"
-                                                                                            Background="Transparent"
-                                                                                            Foreground="{Binding ElementName=PART_TextUserScore, Path=Foreground}"
-                                                                                            Height="{Binding ElementName=PART_TextUserScore, Path=ActualHeight}"
-                                                                                            ContentTemplate="{StaticResource FiveStarScoreTemplate}"/>
-                                                                        </StackPanel>
+                                                                <Label Name="PART_ElemCommunityScore" Content="{DynamicResource LOCCommunityScore}" />
+                                                                <StackPanel Orientation="Horizontal"
+                                                                            Visibility="{Binding ElementName=PART_TextCommunityScore, Path=Visibility}">
+                                                                    <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center"
+                                                                                Style="{DynamicResource TextBlockGameScore}" />
+                                                                    <ContentControl Content="{Binding Game.CommunityScore}"
+                                                                                    Padding="6,0,0,4"
+                                                                                    HorizontalAlignment="Left"
+                                                                                    VerticalAlignment="Center"
+                                                                                    Background="Transparent"
+                                                                                    Foreground="{Binding ElementName=PART_TextCommunityScore, Path=Foreground}"
+                                                                                    Height="{Binding ElementName=PART_TextCommunityScore, Path=ActualHeight}"
+                                                                                    ContentTemplate="{StaticResource FiveStarScoreTemplate}"/>
+                                                                </StackPanel>
 
-                                                                        <Label Name="PART_ElemCommunityScore" Content="{DynamicResource LOCCommunityScore}" />
-                                                                        <StackPanel Orientation="Horizontal"
-                                                                                    Visibility="{Binding ElementName=PART_TextCommunityScore, Path=Visibility}">
-                                                                            <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center"
-                                                                                       Style="{DynamicResource TextBlockGameScore}" />
-                                                                            <ContentControl Content="{Binding Game.CommunityScore}"
-                                                                                            Padding="6,0,0,4"
-                                                                                            HorizontalAlignment="Left"
-                                                                                            VerticalAlignment="Center"
-                                                                                            Background="Transparent"
-                                                                                            Foreground="{Binding ElementName=PART_TextCommunityScore, Path=Foreground}"
-                                                                                            Height="{Binding ElementName=PART_TextCommunityScore, Path=ActualHeight}"
-                                                                                            ContentTemplate="{StaticResource FiveStarScoreTemplate}"/>
-                                                                        </StackPanel>
+                                                                <Label Name="PART_ElemCriticScore" Content="{DynamicResource LOCCriticScore}" />
+                                                                <StackPanel Orientation="Horizontal"
+                                                                            Visibility="{Binding ElementName=PART_TextCriticScore, Path=Visibility}">
+                                                                    <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center"
+                                                                                Style="{DynamicResource TextBlockGameScore}" />
+                                                                    <ContentControl Content="{Binding Game.CriticScore}"
+                                                                                    Padding="6,0,0,4"
+                                                                                    HorizontalAlignment="Left"
+                                                                                    VerticalAlignment="Center"
+                                                                                    Background="Transparent"
+                                                                                    Foreground="{Binding ElementName=PART_TextCriticScore, Path=Foreground}"
+                                                                                    Height="{Binding ElementName=PART_TextCriticScore, Path=ActualHeight}"
+                                                                                    ContentTemplate="{StaticResource FiveStarScoreTemplate}"/>
+                                                                </StackPanel>
 
-                                                                        <Label Name="PART_ElemCriticScore" Content="{DynamicResource LOCCriticScore}" />
-                                                                        <StackPanel Orientation="Horizontal"
-                                                                                    Visibility="{Binding ElementName=PART_TextCriticScore, Path=Visibility}">
-                                                                            <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center"
-                                                                                       Style="{DynamicResource TextBlockGameScore}" />
-                                                                            <ContentControl Content="{Binding Game.CriticScore}"
-                                                                                            Padding="6,0,0,4"
-                                                                                            HorizontalAlignment="Left"
-                                                                                            VerticalAlignment="Center"
-                                                                                            Background="Transparent"
-                                                                                            Foreground="{Binding ElementName=PART_TextCriticScore, Path=Foreground}"
-                                                                                            Height="{Binding ElementName=PART_TextCriticScore, Path=ActualHeight}"
-                                                                                            ContentTemplate="{StaticResource FiveStarScoreTemplate}"/>
-                                                                        </StackPanel>
-
-                                                                        <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsAgeRatings" />
-                                                                    </GridEx>
+                                                                <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
+                                                                <ItemsControl Name="PART_ItemsAgeRatings" />
+                                                            </GridEx>
                                                         </StackPanel>
-
-                                                    </DockPanel>
+                                            
+                                                   </DockPanel>
                                                 </Border>
                                                 <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}"
                                                         CornerRadius="0"
@@ -804,6 +804,18 @@
 
                                             <StackPanel Grid.Column="0" Margin="0,0,0,0">
 
+                                                <StackPanel Name="NewsFeed" Margin="0,0,0,15"
+                                                            Visibility="{PluginSettings Plugin=NewsViewer, Path=ReviewsAvailable, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                    <Label Content="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}" Style="{DynamicResource FeedSectionLabel}" />
+                                                    <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderMainPanels}" />
+                                                        <StackPanel Orientation="Vertical" Margin="10">
+                                                            <ContentControl x:Name="NewsViewer_NewsViewerControl" />
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </StackPanel>
+
                                                 <StackPanel Name="PlayerActivities" Margin="0,0,0,15" >
                                                     <StackPanel.Style>
                                                         <Style TargetType="StackPanel">
@@ -823,45 +835,35 @@
                                                     </StackPanel.Style>
 
                                                     <!-- <Label Content="{DynamicResource LOCPaActivities}" Style="{DynamicResource FeedSectionLabel}"/> -->
-                                                    <Label Content="Activity" Style="{DynamicResource FeedSectionLabel}"/>
                                                     <Grid>
-                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}"
-                                                                CornerRadius="{DynamicResource ControlCornerRadius}" />          
-                                                        <Border CornerRadius="{DynamicResource ControlCornerRadius}"
-                                                                Background="{DynamicResource WindowBackgourndBrush}" 
-                                                                Opacity="0.5" />
-                                                        <Border ClipToBounds="True" CornerRadius="{DynamicResource ControlCornerRadius}"
-                                                                BorderThickness="1" BorderBrush="#000000">
-                                                                <!-- BorderThickness="1" BorderBrush="#151616"> -->
-                                                            <Border.Effect>
-                                                                <BlurEffect Radius="10"/>
-                                                            </Border.Effect>
-                                                        </Border>
-                                                        <Border Padding="2">
-                                                            <ContentControl x:Name="PlayerActivities_PluginActivities" MaxHeight="225">
-                                                                <ContentControl.Resources>
-                                                                    <Style TargetType="ListBox">
-                                                                        <Setter Property="Background" Value="Transparent"/>
-                                                                        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
-                                                                    </Style>
-                                                                    <Style TargetType="ScrollViewer">
-                                                                        <Setter Property="VerticalScrollBarVisibility" Value="Disabled"/>
-                                                                    </Style>
-                                                                </ContentControl.Resources>
-                                                            </ContentControl>
-                                                        </Border>
-                                                    </Grid>
-                                                </StackPanel>
-                                                
-                                                <StackPanel Name="NewsFeed" Margin="0,0,0,15"
-                                                            Visibility="{PluginSettings Plugin=NewsViewer, Path=ReviewsAvailable, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                                    <Label Content="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}" Style="{DynamicResource FeedSectionLabel}" />
-                                                    <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
-                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
-                                                        <Border Style="{DynamicResource OutlineBorderMainPanels}" />
-                                                        <StackPanel Orientation="Vertical" Margin="10">
-                                                            <ContentControl x:Name="NewsViewer_NewsViewerControl" />
-                                                        </StackPanel>
+                                                        <ContentControl x:Name="PlayerActivities_PluginActivities">
+                                                            <ContentControl.Resources>
+                                                                <Style TargetType="GroupItem">
+                                                                    <Style.Resources>
+                                                                        <!-- Targets the root DockPanel of each activity item in PaActivityTemplates.xaml -->
+                                                                        <Style TargetType="DockPanel">
+                                                                            <Setter Property="Background" Value="#252830" />
+                                                                        </Style>
+                                                                    </Style.Resources>
+                                                                    <Setter Property="Template">
+                                                                        <Setter.Value>
+                                                                            <ControlTemplate TargetType="GroupItem">
+                                                                                <StackPanel>
+                                                                                    <Label Style="{DynamicResource FeedSectionLabel}">
+                                                                                        <TextBlock Text="{Binding Name, StringFormat={}{0:MMMM d}}" />
+                                                                                    </Label>
+                                                                                    <ItemsPresenter />
+                                                                                </StackPanel>
+                                                                            </ControlTemplate>
+                                                                        </Setter.Value>
+                                                                    </Setter>
+                                                                </Style>
+
+                                                                <Style TargetType="ListBox">
+                                                                    <Setter Property="Background" Value="Transparent"/>
+                                                                </Style>
+                                                            </ContentControl.Resources>
+                                                        </ContentControl>
                                                     </Grid>
                                                 </StackPanel>
 
@@ -1098,7 +1100,7 @@
                                                                                 </Image.RenderTransform>
                                                                                 <Image.Source>
                                                                                     <DrawingImage>
-                                                                                    <DrawingImage.Drawing>
+                                                                                        <DrawingImage.Drawing>
                                                                                             <DrawingGroup ClipGeometry="M0,0 V36 H36 V0 H0 Z">
                                                                                             <GeometryDrawing Geometry="F1 M36,36z M0,0z M10.1777,10.0258L10.3929,9.80693 10.3929,9.49999 10.3929,5.52777 14.2857,5.52777 14.6001,5.52777 14.8205,5.30358 18,2.06976 21.1795,5.30358 21.3999,5.52777 21.7143,5.52777 25.6071,5.52777 25.6071,9.50001 25.6071,9.80696 25.8223,10.0258 28.5553,12.8055 25.8223,15.5853 25.6071,15.8041 25.6071,16.1111 25.6071,20.0833 21.7143,20.0833 21.3999,20.0833 21.1795,20.3075 18,23.5413 14.8205,20.3075 14.6001,20.0833 14.2857,20.0833 10.3929,20.0833 10.3929,16.1111 10.3929,15.8042 10.1777,15.5853 7.44464,12.8055 10.1777,10.0258z M14.7399,28.0317L11.56,33.4221 9.85164,29.9469 9.6456,29.5278 9.17857,29.5278 6.29474,29.5278 8.68445,25.3611 12.1142,25.3611 14.7399,28.0317z M26.8214,29.5278L26.3544,29.5278 26.1484,29.9469 24.44,33.4221 21.2601,28.0317 23.8858,25.3611 27.3155,25.3611 29.7053,29.5278 26.8214,29.5278z">
                                                                                                 <GeometryDrawing.Brush>
@@ -1138,29 +1140,29 @@
                                                                                     <TextBlock Foreground="{DynamicResource TextBrush}" Text="all achievements! "
                                                                                         Visibility="{PluginSettings Plugin=PlayniteAchievements, Path=Is100Percent, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                                                                                     <TextBlock Foreground="{DynamicResource TextBrush}" Text="{PluginSettings Plugin=PlayniteAchievements, Path=Unlocked, FallbackValue='-'}"/>
-                                                                                <TextBlock Foreground="{DynamicResource TextBrush}" Text="/"/>
+                                                                                    <TextBlock Foreground="{DynamicResource TextBrush}" Text="/"/>
                                                                                     <TextBlock Foreground="{DynamicResource TextBrush}" Text="{PluginSettings Plugin=PlayniteAchievements, Path=Total, FallbackValue='-'}"/>
-                                                                                <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text=" ("/>
+                                                                                    <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text=" ("/>
                                                                                     <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text="{PluginSettings Plugin=PlayniteAchievements, Path=Percent, FallbackValue='-'}"/>
-                                                                                <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text="%)"/>
-                                                                            </DockPanel>
-                                                                            <Grid Margin="0,0,0,2">
-                                                                                <Border Name="Achievements_mask" Margin="0,0,0,5"
-                                                                                    Background="#1e1e1e"
-                                                                                    CornerRadius="{DynamicResource ControlCornerRadius}"
-                                                                                    Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}" />
-                                                                                <StackPanel>
-                                                                                    <StackPanel.OpacityMask>
-                                                                                        <VisualBrush Visual="{Binding ElementName=Achievements_mask}"/>
-                                                                                    </StackPanel.OpacityMask>
-                                                                                    <ProgressBar x:Name="progressBar2" FontSize="10" Margin="0,0,0,5"
+                                                                                    <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text="%)"/>
+                                                                                </DockPanel>
+                                                                                <Grid Margin="0,0,0,2">
+                                                                                    <Border Name="Achievements_mask" Margin="0,0,0,5"
+                                                                                        Background="#1e1e1e"
+                                                                                        CornerRadius="{DynamicResource ControlCornerRadius}"
+                                                                                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}" />
+                                                                                    <StackPanel>
+                                                                                        <StackPanel.OpacityMask>
+                                                                                            <VisualBrush Visual="{Binding ElementName=Achievements_mask}"/>
+                                                                                        </StackPanel.OpacityMask>
+                                                                                        <ProgressBar x:Name="progressBar2" FontSize="10" Margin="0,0,0,5"
                                                                                                     Maximum="{PluginSettings Plugin=PlayniteAchievements, Path=Total, FallbackValue=0}" Value="{PluginSettings Plugin=PlayniteAchievements, Path=Unlocked, FallbackValue=0}" HorizontalAlignment="Center"
-                                                                                                Background="#151619" Foreground="#2d73ff" Height="8" Style="{DynamicResource RoundedProgressBar}" 
-                                                                                                Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}" >
-                                                                                    </ProgressBar>
-                                                                                </StackPanel>
-                                                                            </Grid>
-                                                                        </StackPanel>
+                                                                                                    Background="#151619" Foreground="#2d73ff" Height="8" Style="{DynamicResource RoundedProgressBar}" 
+                                                                                                    Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}" >
+                                                                                        </ProgressBar>
+                                                                                    </StackPanel>
+                                                                                </Grid>
+                                                                            </StackPanel>
                                                                         </Grid>
                                                                     </Border>
                                                                 </Border>
@@ -1279,9 +1281,9 @@
                                                                                 CornerRadius="{DynamicResource ControlCornerRadius}"
                                                                                 Width="Auto" />
                                                                         <Grid>
-                                                                                <!-- Use a VisualBrush of 'mask' as the opacity mask -->
+                                                                            <!-- Use a VisualBrush of 'mask' as the opacity mask -->
                                                                             <Grid.OpacityMask>
-                                                                                    <VisualBrush Visual="{Binding ElementName=HLTB_mask}"/>
+                                                                                <VisualBrush Visual="{Binding ElementName=HLTB_mask}"/>
                                                                             </Grid.OpacityMask>
                                                                             <ContentControl x:Name="HowLongToBeat_PluginProgressBar" HorizontalAlignment="Stretch" Height="25" />
                                                                         </Grid>
@@ -1295,12 +1297,12 @@
                                                                     <Grid.Style>
                                                                         <Style TargetType="Grid">
                                                                             <Setter Property="Visibility" Value="Collapsed" />
-                                                                                <Style.Triggers>
+                                                                            <Style.Triggers>
                                                                                 <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=False}" Value="True">
                                                                                     <Setter Property="Visibility" Value="Visible" />
                                                                                 </DataTrigger>
-                                                                                </Style.Triggers>
-                                                                            </Style>
+                                                                            </Style.Triggers>
+                                                                        </Style>
                                                                     </Grid.Style>
                                                                     <Grid.Resources>
                                                                         <Style TargetType="Label" x:Key="HltbGridLabelStyle">
@@ -1514,7 +1516,7 @@
                                                         </Border>
                                                     </Grid>
                                                 </StackPanel>
-                                                
+
                                                 <StackPanel Name="VNDBPanel" Style="{DynamicResource PluginStackpanelVisibility}"
                                                             Visibility="{PluginSettings Plugin=VNDBNexus, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <Label Content="{DynamicResource LOCPlayniteAchievementsAchievements}" Style="{DynamicResource FeedSectionLabel}"/>
@@ -1528,7 +1530,7 @@
                                                         </Border>
                                                     </Grid>
                                                 </StackPanel>
-                                                
+
                                                 <StackPanel Name="ScreenshotsVisualizerPanel" Style="{DynamicResource PluginStackpanelVisibility}"
                                                             Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <Label Content="{DynamicResource LOCSsvTitle}" Style="{DynamicResource FeedSectionLabel}"/>

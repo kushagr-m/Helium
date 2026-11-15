@@ -804,6 +804,18 @@
 
                                             <StackPanel Grid.Column="0" Margin="0,0,0,0">
 
+                                                <StackPanel Name="NewsFeed" Margin="0,0,0,15"
+                                                            Visibility="{PluginSettings Plugin=NewsViewer, Path=ReviewsAvailable, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                    <Label Content="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}" Style="{DynamicResource FeedSectionLabel}" />
+                                                    <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderMainPanels}" />
+                                                        <StackPanel Orientation="Vertical" Margin="10">
+                                                            <ContentControl x:Name="NewsViewer_NewsViewerControl" />
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </StackPanel>
+
                                                 <StackPanel Name="PlayerActivities" Margin="0,0,0,15" >
                                                     <StackPanel.Style>
                                                         <Style TargetType="StackPanel">
@@ -823,45 +835,35 @@
                                                     </StackPanel.Style>
 
                                                     <!-- <Label Content="{DynamicResource LOCPaActivities}" Style="{DynamicResource FeedSectionLabel}"/> -->
-                                                    <Label Content="Activity" Style="{DynamicResource FeedSectionLabel}"/>
                                                     <Grid>
-                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}"
-                                                                CornerRadius="{DynamicResource ControlCornerRadius}" />          
-                                                        <Border CornerRadius="{DynamicResource ControlCornerRadius}"
-                                                                Background="{DynamicResource WindowBackgourndBrush}" 
-                                                                Opacity="0.5" />
-                                                        <Border ClipToBounds="True" CornerRadius="{DynamicResource ControlCornerRadius}"
-                                                                BorderThickness="1" BorderBrush="#000000">
-                                                                <!-- BorderThickness="1" BorderBrush="#151616"> -->
-                                                            <Border.Effect>
-                                                                <BlurEffect Radius="10"/>
-                                                            </Border.Effect>
-                                                        </Border>
-                                                        <Border Padding="2">
-                                                            <ContentControl x:Name="PlayerActivities_PluginActivities" MaxHeight="225">
-                                                                <ContentControl.Resources>
-                                                                    <Style TargetType="ListBox">
-                                                                        <Setter Property="Background" Value="Transparent"/>
-                                                                        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
-                                                                    </Style>
-                                                                    <Style TargetType="ScrollViewer">
-                                                                        <Setter Property="VerticalScrollBarVisibility" Value="Disabled"/>
-                                                                    </Style>
-                                                                </ContentControl.Resources>
-                                                            </ContentControl>
-                                                        </Border>
-                                                    </Grid>
-                                                </StackPanel>
-                                                
-                                                <StackPanel Name="NewsFeed" Margin="0,0,0,15"
-                                                            Visibility="{PluginSettings Plugin=NewsViewer, Path=ReviewsAvailable, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                                    <Label Content="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}" Style="{DynamicResource FeedSectionLabel}" />
-                                                    <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
-                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
-                                                        <Border Style="{DynamicResource OutlineBorderMainPanels}" />
-                                                        <StackPanel Orientation="Vertical" Margin="10">
-                                                            <ContentControl x:Name="NewsViewer_NewsViewerControl" />
-                                                        </StackPanel>
+                                                        <ContentControl x:Name="PlayerActivities_PluginActivities">
+                                                            <ContentControl.Resources>
+                                                                <Style TargetType="GroupItem">
+                                                                    <Style.Resources>
+                                                                        <!-- Targets the root DockPanel of each activity item in PaActivityTemplates.xaml -->
+                                                                        <Style TargetType="DockPanel">
+                                                                            <Setter Property="Background" Value="#252830" />
+                                                                        </Style>
+                                                                    </Style.Resources>
+                                                                    <Setter Property="Template">
+                                                                        <Setter.Value>
+                                                                            <ControlTemplate TargetType="GroupItem">
+                                                                                <StackPanel>
+                                                                                    <Label Style="{DynamicResource FeedSectionLabel}">
+                                                                                        <TextBlock Text="{Binding Name, StringFormat={}{0:MMMM d}}" />
+                                                                                    </Label>
+                                                                                    <ItemsPresenter />
+                                                                                </StackPanel>
+                                                                            </ControlTemplate>
+                                                                        </Setter.Value>
+                                                                    </Setter>
+                                                                </Style>
+
+                                                                <Style TargetType="ListBox">
+                                                                    <Setter Property="Background" Value="Transparent"/>
+                                                                </Style>
+                                                            </ContentControl.Resources>
+                                                        </ContentControl>
                                                     </Grid>
                                                 </StackPanel>
 
