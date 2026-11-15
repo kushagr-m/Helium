@@ -652,7 +652,7 @@
                                                                         </TextBlock.Style>
                                                                     </TextBlock>
                                                                     <HtmlTextView Name="PART_HtmlDescription"
-                                                                                Margin="0,0,0,-15"
+                                                                                Margin="0,0,0,0"
                                                                                 HtmlFontSize="{DynamicResource FontSize}"
                                                                                 HtmlFontFamily="{DynamicResource FontFamily}"
                                                                                 HtmlForeground="{DynamicResource DetailsViewContainerLabelColor}"
