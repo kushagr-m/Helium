@@ -1503,6 +1503,28 @@
                                                     </Grid>
                                                 </StackPanel>
                                                 
+                                                <StackPanel Name="ScreenshotUtilities"
+                                                            Visibility="{PluginSettings Plugin=ScreenshotUtilities, Path=IsViewerControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                    <Label Content="{DynamicResource LOC_ScreenshotUtilities_ControlLabel}" Style="{DynamicResource FeedSectionLabel}"/>
+                                                    <Grid>
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanels}" />
+                                                        <Border Padding="10,0,10,0" >
+                                                            <StackPanel>
+                                                                <ContentControl x:Name="ScreenshotUtilities_ScreenshotViewerControl" />
+                                                                <ContentControl x:Name="ScreenshotUtilities_ButtonControl"
+                                                                            Height="25" Width="40"
+                                                                            Margin="5,0,0,5" HorizontalAlignment="Right"
+                                                                            Style="{DynamicResource ActionControl}"
+                                                                            Visibility="{PluginSettings Plugin=ScreenshotUtilities, Path=IsButtonControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                                            </StackPanel>
+                                                        </Border>
+                                                    </Grid>
+                                                    
+
+                                                    
+                                                </StackPanel>
+
                                                 <StackPanel Name="SteamScreenshots" Style="{DynamicResource PluginStackpanelVisibility}"
                                                             Visibility="{PluginSettings Plugin=SteamScreenshots, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <Label Content="{DynamicResource LOC_SteamScreenshots_SteamScreenshotsLabel}" Style="{DynamicResource FeedSectionLabel}"/>
