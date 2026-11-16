@@ -47,3 +47,10 @@ Packages:
       - 'Fixed: Achievements progress bar in header on Details View being very narrow when Playnite is set to certain languages'
       - 'Fixed: Ends of descriptions are cut-off in game overview'
       - 'Add banner image for HoYoPlay library plugin games (by darklinkpower)'
+  - Version: 1.71.2
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2026-11-16
+    PackageUrl: https://github.com/kushagr-m/Helium/releases/download/1.17.2/b46f5ca0-be71-4398-b924-216c7c20efdd_1_71_2.pthm
+    Changelog:
+      - 'Add integration for HerrKnarz Screenshot Utilities'
+      
