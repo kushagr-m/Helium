@@ -1,6 +1,5 @@
-![DownloadCount](https://img.shields.io/github/downloads/darklinkpower/Helium/total.svg)
-# Helium (kkcd ford)
-Theme inspired by Steam for [Playnite](https://github.com/JosefNemec/Playnite) Desktop Mode. Originally created by Brandon Balderas (darklinkpower), forked by me to be able to make some opinionated changes that don't make sense in the upstream branch.
+# Helium (kkcd fork)
+Theme inspired by Steam for [Playnite](https://github.com/JosefNemec/Playnite) Desktop Mode. Originally created by [Brandon Balderas (darklinkpower)](https://github.com/darklinkpower), forked by me to make some opinionated changes that don't make sense in the upstream branch.
 
 The goal of my fork is to more closely align the visual styling of the theme with the official Steam client as well as make changes that better suit my use case.
 
@@ -15,17 +14,17 @@ I do not accept tips. If you would like to support the development of Playnite t
 
 ## Support
 
-If you encounter a bug or need help with an issue related to the project *specifically related to changes made in this fork*, please open a new issue in the [Issues Tracker](https://github.com/kushagr-m/Helium/issues).
+If you encounter a bug or need help with an issue related to the project *specifically related to changes made in this fork*, please open a new issue in the [Issues Tracker](https://github.com/kushagr-m/Helium/issues) or in the [Discord thread](https://discord.com/channels/365863063296933888/1572208438984052757).
 
 Before submitting:
 - **Search for existing issues** to avoid duplicates and speed up resolution.
-- **Check whether your issue exists in [darklinkpower's version](https://github.com/darklinkpower/Helium)**. If it does, please raise an issue over there.
+- **Check whether your issue exists in [darklinkpower's version](https://github.com/darklinkpower/Helium)**. If it does, please raise an issue over there. I merge releases from the upstream branch regularly.
 - Consider whether the feature could already be achieved through Playnite's built-in settings or the [ThemeModifier plugin](https://playnite.link/addons.html#playnite-thememodifier-plugin).
 - When reporting bugs, provide detailed information (Playnite version, theme version, logs, screenshots, etc.) to help with troubleshooting.
 
 ## Feature Requests
 
-If you have a new idea or feature suggestion, feel free to submit it via the [Issues Tracker](https://github.com/kushagr-m/Helium/issues).
+If you have a new idea or feature suggestion, feel free to submit it via the [Issues Tracker](https://github.com/kushagr-m/Helium/issues) or in the [Discord thread](https://discord.com/channels/365863063296933888/1572208438984052757).
 
 Before submitting:
 - **Search for existing requests** to ensure your suggestion hasn't already been made.
@@ -57,25 +56,27 @@ From darklinkpower:
 - Achieve features that are not available by default on Playnite via community extensions
 
 ## Installation
-Option A [not currently set up for my fork]: Click the `Download` button in the [addon database entry here](https://playnite.link/addons.html#8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1) to start the install process.
+Option A: Click the `Download` button in the [addon database entry here](https://playnite.link/addons.html#b46f5ca0-be71-4398-b924-216c7c20efdd) to start the install process.
 
 Option B: Download the latest packaged `pthm` theme file from the [Releases page](https://github.com/kushagr-m/Helium/releases/latest) and open it.
 
-Option C [not currently set up for my fork]: Download from the Addons browser in Playnite.
+Option C: Download from the Addons browser in Playnite.
 
 
 ## Extensions support
 The theme provides extensive support for a wide range of available Playnite extensions, enhancing its functionality even further.
 
-- **Achievements:** [SuccessStory](https://playnite.link/addons.html#playnite-successstory-plugin) extension.
+- **Achievements**: [Playnite Achievements](https://playnite.link/addons.html#PlayniteAchievements) extension. (*Note: SuccessStory compatibility has been deprecated in this fork.*)
+- **Activity log**: [PlayerActivities](https://playnite.link/addons.html#playnite-playeractivities-plugin)
 - **Alternative background images:** [BackgroundChanger](https://playnite.link/addons.html#playnite-backgroundchanger-plugin) extension.
 - **Duplicate copies handling:** [DuplicateHider](https://playnite.link/addons.html#felixkmh_DuplicateHider_Plugin) extension.
 - **Features icons:** [Library Management](https://playnite.link/addons.html#playnite-librarymanagement-plugin) extension.
+- **Show related games:** [Game Relations](https://playnite.link/addons.html#GameRelations_a4c15d63-9ab4-4d96-9a0c-8f9b35d43a1f) extension.
 - **Game cover banners and other functionality:** [ThemeExtras](https://playnite.link/addons.html#felixkmh_Extras_Plugin) extension.
 - **Game statistics:** [GameActivity](https://playnite.link/addons.html#playnite-gameactivity-plugin) extension.
 - **HowLongToBeat data:** [HowLongToBeat](https://playnite.link/addons.html#playnite-howlongtobeat-plugin) extension.
 - **Logos:** [Extra Metadata Loader](https://playnite.link/addons.html#ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429) extension.
-- **Screenshots:** [ScreenshotsVisualizer](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin) extension.
+- **Screenshots:** [ScreenshotsVisualizer](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin), [SteamScreenshots](https://playnite.link/addons.html#SteamScreenshots_8e77fe31-5e62-41e2-8fa2-64844cfd5b6b) or [Screnshot Utilities](https://playnite.link/addons.html#ScreenshotUtilities_485d682f-73e9-4d54-b16f-b8dd49e88f90)
 - **Steam Game news:** [Steam News and Players Viewer](https://playnite.link/addons.html#NewsViewer_15e03ffe-90f6-4e8e-bd4d-94514777481d) extension.
 - **Steam Game reviews:** [Review Viewer](https://playnite.link/addons.html#Review_Viewer_ca24e37a-76d9-49bf-89ab-d3cba4a54bd1) extension.
 - **Steam players online counter:** [Steam News and Players Viewer](https://playnite.link/addons.html#NewsViewer_15e03ffe-90f6-4e8e-bd4d-94514777481d) extension.
@@ -91,7 +92,7 @@ For the intended experience, please use the following settings.
 <summary>Click to view the appearance settings used in these screenshots</summary>
 
 - Disable sidebar and move all required extensions to the top bar
-- Install ExtraMetadataLoader, ThemeExtras and SuccessStory
+- Install ExtraMetadataLoader, ThemeExtras and Playnite Achievements
 
 ![Screenshot](https://raw.githubusercontent.com/kushagr-m/Helium/master/screenshots/settings_01.png)
 
@@ -111,7 +112,6 @@ For the intended experience, please use the following settings.
 The theme provides extensive customization options that go beyond what is normally available in Playnite.
 
 - **General settings:** Customize various elements using the [ThemeModifier](https://playnite.link/addons.html#playnite-thememodifier-plugin) extension.
-- **Grid View layout:** Use the Details View layout in Grid View with the [Details to Grid View Converter](https://playnite.link/addons.html#ThemesDetailsViewToGridViewConverter_ef8a7226-eedc-478d-a506-92ee6c088aa3) extension.
 
 ## Screenshots
 
