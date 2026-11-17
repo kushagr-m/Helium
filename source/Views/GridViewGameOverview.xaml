@@ -1170,9 +1170,77 @@
                                                             <Grid>
                                                                 <Border Style="{DynamicResource OutlineBorderSidePanels}" />
                                                                 <Border Padding="10">
+
+                                                                    <StackPanel Margin="0,-2,0,0">
+
+                                                                        
                                                                     <StackPanel>
-                                                                        <!-- <ContentControl x:Name="PlayniteAchievements_PluginProgressBar" Height="20" Margin="0,0,0,10"/> -->
-                                                                        <ContentControl x:Name="PlayniteAchievements_PluginCompactUnlocked" Margin="-10,0,5,10"/>
+                                                                           <StackPanel.Style>
+                                                                                <Style TargetType="StackPanel">
+                                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                                    <Style.Triggers>
+                                                                                        <DataTrigger Binding="{PluginSettings Plugin=PlayniteAchievements, Path=Unlocked, FallbackValue={x:Null}}" Value="0">
+                                                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                                                        </DataTrigger>
+                                                                                    </Style.Triggers>
+                                                                                </Style>
+                                                                            </StackPanel.Style>
+                                                                            
+                                                                            <!-- Latest Unlocked Achievement -->
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <ContentControl x:Name="PlayniteAchievements_AchievementCompactLatest" Margin="-2,0,6,0"/>
+                                                                                <ContentControl Content="{PluginSettings Plugin=PlayniteAchievements, Path=LatestAchievementData}" Margin="0,0,0,0">
+                                                                                    <ContentControl.ContentTemplate>
+                                                                                        <DataTemplate>
+                                                                                            <DockPanel Margin="0,0,0,0">
+                                                                                                <StackPanel VerticalAlignment="Center">
+                                                                                                    <TextBlock Text="{Binding DisplayName}" Foreground="{DynamicResource TextBrush}"
+                                                                                                            FontSize="{DynamicResource FontSize}" TextTrimming="CharacterEllipsis" 
+                                                                                                            Margin="0,-4,0,-1"/>
+                                                                                                    <TextBlock Text="{Binding Description}" Foreground="{DynamicResource TextBrushDarker}"
+                                                                                                            FontSize="{DynamicResource FontSizeSmall}" TextTrimming="CharacterEllipsis" />
+                                                                                                </StackPanel>
+                                                                                            </DockPanel>
+                                                                                        </DataTemplate>
+                                                                                    </ContentControl.ContentTemplate>
+                                                                                </ContentControl>
+                                                                            </StackPanel>
+                                                                            
+                                                                            <!-- Other Unlocked Achievements (Mask off first achievement and fade out to the right) -->
+                                                                            <ScrollViewer Margin="-2,0,0,10"
+                                                                                        HorizontalScrollBarVisibility="Hidden"
+                                                                                        VerticalScrollBarVisibility="Disabled">
+                                                                                <ScrollViewer.Style>
+                                                                                    <Style TargetType="ScrollViewer">
+                                                                                        <Setter Property="OpacityMask">
+                                                                                            <Setter.Value>
+                                                                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                                                                    <GradientStop Color="#FF000000" Offset="0.0" />
+                                                                                                    <GradientStop Color="#FF000000" Offset="0.8" />
+                                                                                                    <GradientStop Color="#00000000" Offset="0.965" />
+                                                                                                </LinearGradientBrush>
+                                                                                            </Setter.Value>
+                                                                                        </Setter>
+                                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                                        <Style.Triggers>
+                                                                                            <!-- Everything fits: no mask -->
+                                                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=ScrollableWidth}"
+                                                                                                        Value="0">
+                                                                                                <Setter Property="OpacityMask" Value="{x:Null}" />
+                                                                                            </DataTrigger>
+                                                                                            <!-- Only one achievement unlocked, no need to show the rest of the list. -->
+                                                                                            <DataTrigger Binding="{PluginSettings Plugin=PlayniteAchievements, Path=Unlocked, FallbackValue={x:Null}}" Value="1">
+                                                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                                                            </DataTrigger>
+                                                                                        </Style.Triggers>
+                                                                                    </Style>
+                                                                                </ScrollViewer.Style>
+                                                                                <ContentControl x:Name="PlayniteAchievements_AchievementCompactUnlockedList" Margin="-56,0,0,0"/>
+                                                                            </ScrollViewer>
+                                                                        
+                                                                        </StackPanel>
+
+                                                                        <!-- Locked achievements -->
                                                                         <StackPanel>
                                                                             <StackPanel.Style>
                                                                                 <Style TargetType="StackPanel">
@@ -1184,6 +1252,7 @@
                                                                                     </Style.Triggers>
                                                                                 </Style>
                                                                             </StackPanel.Style>
+                                                                            
                                                                             <Separator Margin="0,0,0,10">
                                                                                 <Separator.Style>
                                                                                     <Style TargetType="Separator">
@@ -1200,9 +1269,36 @@
                                                                                         FontFamily="{DynamicResource FontFamily}"
                                                                                         Foreground="{DynamicResource TextBrushDarker}" 
                                                                                         Margin="2,0,0,5" />
-                                                                            <ContentControl x:Name="PlayniteAchievements_PluginCompactLocked" Margin="-10,0,5,0"/>
+                                                                            <!-- Other Unlocked Achievements (Fade out to the right if too wide (i.e. scrollable)) -->
+                                                                            <ScrollViewer Margin="-2,0,0,6"
+                                                                                          HorizontalScrollBarVisibility="Hidden"
+                                                                                          VerticalScrollBarVisibility="Disabled">
+                                                                                <ScrollViewer.Style>
+                                                                                    <Style TargetType="ScrollViewer">
+                                                                                        <Setter Property="OpacityMask">
+                                                                                            <Setter.Value>
+                                                                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                                                                    <GradientStop Color="#FF000000" Offset="0.0" />
+                                                                                                    <GradientStop Color="#FF000000" Offset="0.8" />
+                                                                                                    <GradientStop Color="#00000000" Offset="0.965" />
+                                                                                                </LinearGradientBrush>
+                                                                                            </Setter.Value>
+                                                                                        </Setter>
+                                                                                        <Style.Triggers>
+                                                                                            <!-- Everything fits: no mask -->
+                                                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=ScrollableWidth}"
+                                                                                                        Value="0">
+                                                                                                <Setter Property="OpacityMask" Value="{x:Null}" />
+                                                                                            </DataTrigger>
+                                                                                        </Style.Triggers>
+                                                                                    </Style>
+                                                                                </ScrollViewer.Style>
+                                                                                <ContentControl x:Name="PlayniteAchievements_AchievementCompactLockedList"/>
+                                                                            </ScrollViewer>
+                                                                            
                                                                         </StackPanel>
-                                                                        <ContentControl x:Name="PlayniteAchievements_PluginButton" HorizontalAlignment="Right" Height="25" Margin="0,2,2,2" 
+                                                                        
+                                                                        <ContentControl x:Name="PlayniteAchievements_AchievementButton" HorizontalAlignment="Right" Height="25" Margin="0,2,2,2" 
                                                                                             Visibility="{PluginSettings Plugin=PlayniteAchievements, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                                                     <TextBlock Foreground="{DynamicResource TextBrush}" Text="You've unlocked "/>     
                                                                         </ContentControl>
