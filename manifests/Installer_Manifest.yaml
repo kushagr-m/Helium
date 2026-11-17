@@ -55,7 +55,7 @@ Packages:
       - 'Add integration for HerrKnarz Screenshot Utilities'
   - Version: 1.71.3
     RequiredApiVersion: 2.8.0
-    ReleaseDate: 2026-11-16
+    ReleaseDate: 2026-11-17
     PackageUrl: https://github.com/kushagr-m/Helium/releases/download/1.17.3/b46f5ca0-be71-4398-b924-216c7c20efdd_1_71_3.pthm
     Changelog:
       - 'Updated: Completed migration from SuccessStory to Playnite Achievements.'
