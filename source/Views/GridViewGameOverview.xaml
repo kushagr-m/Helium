@@ -811,10 +811,35 @@
                                                         <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
                                                         <Border Style="{DynamicResource OutlineBorderMainPanels}" />
                                                         <StackPanel Orientation="Vertical" Margin="10">
-                                                            <ContentControl x:Name="NewsViewer_NewsViewerControl" />
+                                                            <ContentControl x:Name="NewsViewer_NewsViewerControl" Focusable="False"/>
                                                         </StackPanel>
                                                     </Grid>
                                                 </StackPanel>
+
+                                                <!-- Fade out the bottom of playeractivities -->
+                                                <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                                                              VerticalScrollBarVisibility="Hidden"
+                                                              MaxHeight="400">
+                                                    <ScrollViewer.Style>
+                                                        <Style TargetType="ScrollViewer">
+                                                            <Setter Property="OpacityMask">
+                                                                <Setter.Value>
+                                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                                        <GradientStop Color="#FF000000" Offset="0.0" />
+                                                                        <GradientStop Color="#FF000000" Offset="0.8" />
+                                                                        <GradientStop Color="#00000000" Offset="0.965" />
+                                                                    </LinearGradientBrush>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                            <Style.Triggers>
+                                                                <!-- Everything fits: no mask -->
+                                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=ScrollableHeight}"
+                                                                            Value="0">
+                                                                    <Setter Property="OpacityMask" Value="{x:Null}" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </ScrollViewer.Style>
 
                                                 <StackPanel Name="PlayerActivities" Margin="0,0,0,15" >
                                                     <StackPanel.Style>
@@ -864,8 +889,9 @@
                                                                 </Style>
                                                             </ContentControl.Resources>
                                                         </ContentControl>
-                                                    </Grid>
-                                                </StackPanel>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </ScrollViewer>
 
                                                 <StackPanel Name="VideoFeed" Margin="0,0,0,15">
                                                     <StackPanel.Style>
@@ -1616,9 +1642,6 @@
                                                             </StackPanel>
                                                         </Border>
                                                     </Grid>
-                                                    
-
-                                                    
                                                 </StackPanel>
                                                 
                                                 <StackPanel Name="SteamScreenshots" Style="{DynamicResource PluginStackpanelVisibility}"

@@ -811,61 +811,87 @@
                                                         <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
                                                         <Border Style="{DynamicResource OutlineBorderMainPanels}" />
                                                         <StackPanel Orientation="Vertical" Margin="10">
-                                                            <ContentControl x:Name="NewsViewer_NewsViewerControl" />
+                                                            <ContentControl x:Name="NewsViewer_NewsViewerControl" Focusable="False"/>
                                                         </StackPanel>
                                                     </Grid>
                                                 </StackPanel>
 
-                                                <StackPanel Name="PlayerActivities" Margin="0,0,0,15" >
-                                                    <StackPanel.Style>
-                                                        <Style TargetType="StackPanel">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                <!-- Fade out the bottom of playeractivities -->
+                                                <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                                                              VerticalScrollBarVisibility="Hidden"
+                                                              MaxHeight="400">
+                                                    <ScrollViewer.Style>
+                                                        <Style TargetType="ScrollViewer">
+                                                            <Setter Property="OpacityMask">
+                                                                <Setter.Value>
+                                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                                        <GradientStop Color="#FF000000" Offset="0.0" />
+                                                                        <GradientStop Color="#FF000000" Offset="0.8" />
+                                                                        <GradientStop Color="#00000000" Offset="0.965" />
+                                                                    </LinearGradientBrush>
+                                                                </Setter.Value>
+                                                            </Setter>
                                                             <Style.Triggers>
-                                                                <DataTrigger Binding="{Binding ElementName=PlayerActivities_PluginActivities, Path=Visibility, FallbackValue=Collapsed}" Value="Visible" >
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=PlayerActivities, Path=EnableIntegrationActivities, FallbackValue=False}" Value="True" >
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=PlayerActivities, Path=HasData, FallbackValue=False}" Value="False" >
-                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                <!-- Everything fits: no mask -->
+                                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=ScrollableHeight}"
+                                                                            Value="0">
+                                                                    <Setter Property="OpacityMask" Value="{x:Null}" />
                                                                 </DataTrigger>
                                                             </Style.Triggers>
                                                         </Style>
-                                                    </StackPanel.Style>
+                                                    </ScrollViewer.Style>
 
-                                                    <!-- <Label Content="{DynamicResource LOCPaActivities}" Style="{DynamicResource FeedSectionLabel}"/> -->
-                                                    <Grid>
-                                                        <ContentControl x:Name="PlayerActivities_PluginActivities">
-                                                            <ContentControl.Resources>
-                                                                <Style TargetType="GroupItem">
-                                                                    <Style.Resources>
-                                                                        <!-- Targets the root DockPanel of each activity item in PaActivityTemplates.xaml -->
-                                                                        <Style TargetType="DockPanel">
-                                                                            <Setter Property="Background" Value="#252830" />
-                                                                        </Style>
-                                                                    </Style.Resources>
-                                                                    <Setter Property="Template">
-                                                                        <Setter.Value>
-                                                                            <ControlTemplate TargetType="GroupItem">
-                                                                                <StackPanel>
-                                                                                    <Label Style="{DynamicResource FeedSectionLabel}">
-                                                                                        <TextBlock Text="{Binding Name, StringFormat={}{0:MMMM d}}" />
-                                                                                    </Label>
-                                                                                    <ItemsPresenter />
-                                                                                </StackPanel>
-                                                                            </ControlTemplate>
-                                                                        </Setter.Value>
-                                                                    </Setter>
-                                                                </Style>
+                                                    <StackPanel Name="PlayerActivities" Margin="0,0,0,15" >
+                                                        <StackPanel.Style>
+                                                            <Style TargetType="StackPanel">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding ElementName=PlayerActivities_PluginActivities, Path=Visibility, FallbackValue=Collapsed}" Value="Visible" >
+                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{PluginSettings Plugin=PlayerActivities, Path=EnableIntegrationActivities, FallbackValue=False}" Value="True" >
+                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{PluginSettings Plugin=PlayerActivities, Path=HasData, FallbackValue=False}" Value="False" >
+                                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </StackPanel.Style>
 
-                                                                <Style TargetType="ListBox">
-                                                                    <Setter Property="Background" Value="Transparent"/>
-                                                                </Style>
-                                                            </ContentControl.Resources>
-                                                        </ContentControl>
-                                                    </Grid>
-                                                </StackPanel>
+                                                        <!-- <Label Content="{DynamicResource LOCPaActivities}" Style="{DynamicResource FeedSectionLabel}"/> -->
+                                                        <Grid>
+                                                            <ContentControl x:Name="PlayerActivities_PluginActivities">
+                                                                <ContentControl.Resources>
+                                                                    <Style TargetType="GroupItem">
+                                                                        <Style.Resources>
+                                                                            <!-- Targets the root DockPanel of each activity item in PaActivityTemplates.xaml -->
+                                                                            <Style TargetType="DockPanel">
+                                                                                <Setter Property="Background" Value="#252830" />
+                                                                            </Style>
+                                                                        </Style.Resources>
+                                                                        <Setter Property="Template">
+                                                                            <Setter.Value>
+                                                                                <ControlTemplate TargetType="GroupItem">
+                                                                                    <StackPanel>
+                                                                                        <Label Style="{DynamicResource FeedSectionLabel}">
+                                                                                            <TextBlock Text="{Binding Name, StringFormat={}{0:MMMM d}}" />
+                                                                                        </Label>
+                                                                                        <ItemsPresenter />
+                                                                                    </StackPanel>
+                                                                                </ControlTemplate>
+                                                                            </Setter.Value>
+                                                                        </Setter>
+                                                                    </Style>
+
+                                                                    <Style TargetType="ListBox">
+                                                                        <Setter Property="Background" Value="Transparent"/>
+                                                                    </Style>
+                                                                </ContentControl.Resources>
+                                                            </ContentControl>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </ScrollViewer>
 
                                                 <StackPanel Name="VideoFeed" Margin="0,0,0,15">
                                                     <StackPanel.Style>
@@ -1616,9 +1642,6 @@
                                                             </StackPanel>
                                                         </Border>
                                                     </Grid>
-                                                    
-
-                                                    
                                                 </StackPanel>
 
                                                 <StackPanel Name="SteamScreenshots" Style="{DynamicResource PluginStackpanelVisibility}"
